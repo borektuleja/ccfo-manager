@@ -1,0 +1,10 @@
+.__container {
+    min-height: 100vh;
+    background-color: rgb(18, 18, 18);
+}
+
+.__column {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}

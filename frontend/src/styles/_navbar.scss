@@ -1,0 +1,35 @@
+.__navbar {
+    background-color: rgb(33, 33, 69);
+    color: white;
+    display: flex;
+    justify-content: center;
+    font-family: "Roboto";
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.__navbar__navigation {
+    width: min(100%, 1024px);
+    padding: 24px;
+}
+
+.__navbar__list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+}
+
+.__navbar__item {
+    transition: color 0.25s;
+
+    &:hover {
+        color: rgb(0, 144, 255);
+    }
+
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+}

@@ -1,0 +1,29 @@
+RewriteEngine on
+
+Options -Indexes
+
+Header Set Access-Control-Allow-Origin "*"
+Header Set Access-Control-Allow-Methods "DELETE, GET, PATCH, POST"
+Header Set Content-Type "application/json"
+
+RewriteCond %{REQUEST_METHOD} DELETE
+RewriteRule ^events\/(\d+)\/?$       index.php?controller=EventController&method=Delete&id=$1 [L]
+RewriteCond %{REQUEST_METHOD} DELETE
+RewriteRule ^reservations\/(\d+)\/?$ index.php?controller=ReservationController&method=Delete&id=$1 [L]
+
+RewriteCond %{REQUEST_METHOD} GET
+RewriteRule ^events\/?$ index.php?controller=EventController&method=Get [L]
+
+RewriteCond %{REQUEST_METHOD} PATCH
+RewriteRule ^events\/(\d+)\/?$       index.php?controller=EventController&method=Patch&id=$1 [L]
+RewriteCond %{REQUEST_METHOD} PATCH
+RewriteRule ^reservations\/(\d+)\/?$ index.php?controller=ReservationController&method=Patch&id=$1 [L]
+
+RewriteCond %{REQUEST_METHOD} POST
+RewriteRule ^auth/sign-in\/?$     index.php?controller=AuthController&method=SignIn [L]
+RewriteRule %{REQUEST_METHOD} POST
+RewriteRule ^session/token\/?$    index.php?controller=SessionController&method=Token [L]
+RewriteCond %{REQUEST_METHOD} POST
+RewriteRule ^events\/?$       index.php?controller=EventController&method=Post [L]
+RewriteCond %{REQUEST_METHOD} POST
+RewriteRule ^reservations\/?$ index.php?controller=ReservationController&method=Post [L]
